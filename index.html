@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnPro | Your Learning Companion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #4e54c8, #8f94fb);
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      bottom: 0;
+      padding: 10px 0;
+    }
+    nav a {
+      color: #4e54c8;
+      trasition: none;
+      font-size: 16px;
+    }
+    .hero {
+  background: radial-gradient(circle, #ff7e5f, #feb47b);
+  height: 300px;
+  display: flex;
+  flex-direction: column; /* Changes layout to vertical */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+  font-size: 28px;
+  margin: 10px 0; /* Adds spacing between the h2 elements */
+}
+  
+    .features {
+      padding: 20px;
+    }
+    .features h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .feature-card {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 10px 0;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+    .feature-card:hover {
+      transform: scale(1.02);
+    }
+    .feature-icon {
+      font-size: 36px;
+      margin-right: 15px;
+      color: #4e54c8;
+    }
+    .feature-text {
+      flex: 1;
+    }
+    .feature-text h3 {
+      margin: 0;
+    }
+    .cta {
+      text-align: center;
+      padding: 20px;
+      background: #8f94fb;
+      color: white;
+    }
+    .cta button {
+      background: #4e54c8;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .cta button:hover {
+      background: #383b96;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #666;
+      background: #f3f4f6;
+    }
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 15px;
+        text-align: center;
+      }
+      .feature-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .feature-icon {
+        margin-bottom: 10px;
+      }
+    }
+  
+  
+  header h1 {
+  overflow: hidden; /* Hides the text initially */
+  white-space: nowrap; /* Prevents wrapping of the text */
+  border-right: 3px solid currentColor; /* Simulates a typing cursor */
+  animation: typing 2s steps(30, end), blink 6s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: currentColor;
+  }
+}
+  
+  
+  .hero h2 {
+  opacity: 0;
+  transform: translateX(-100%);
+  filter: blur(10px);
+  animation: slideBlur 1s ease-in-out forwards;
+}
+
+.hero h2:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.hero h2:nth-child(2) {
+  animation-delay: 1.1s;
+}
+
+.hero h2:nth-child(3) {
+  animation-delay: 1.2s;
+}
+  
+.hero h2:nth-child(4) {
+  animation-delay: 1.3s;
+}
+@keyframes slideBlur {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+  
+  
+  #vee {
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  animation: bounceIn 1.5s ease-in-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  
+  /* Define the animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Initially, set the element to be off-screen */
+.feature-card {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* Add class to trigger animation */
+.feature-card.visible {
+  animation: slideIn 1s forwards;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AUTOBOXING/UNBOXING</h1>
+  </header>
+
+  <center>
+  <section class="hero">
+    <h2>CLG_NAME: GEC HOOVINAHADAGALI</h2>
+    <h2>SUBMITTED BY: VEERESH P GOUDAR</h2>
+    <h2>USN: 2GB24CS408</h2>
+    <h2>UNDER THE GUIDANCE OF: UMAPATI sir</h2>
+  </section>
+  </center>
+
+  <section class="features">
+  <h2 id="vee">SEMINAR TOPICS</h2>
+  <div class="feature-card" onclick="showJavaContent()">
+    <div class="feature-icon"></div>
+    <div class="feature-text">
+      <h3>AUTOBOXING/UNBOXING</h3>
+      <p>Explore Autoboxing concept in Java</p>
+    </div>
+  </div>
+  <div class="feature-card" onclick="showLiveClassesContent()">
+    <div class="feature-icon"></div>
+    <div class="feature-text">
+      <h3>AUTOBOXING METHODS</h3>
+      <p>Explore Autoboxing Methods.</p>
+    </div>
+  </div>
+  <div class="feature-card" onclick="showAdaptiveLearning()">
+    <div class="feature-icon"></div>
+    <div class="feature-text">
+      <h3>AUTOBOXING/UNBOXING boolean AND character VALUE</h3>
+      <p> Explore about the topic of Autoboxing in expressions</p>
+    </div>
+  </div>
+</section>
+
+<!-- Java Section -->
+<section id="java-content" style="display:none; padding: 20px; background: #fff;">
+  <h2>AUTOBOXING/UNBOXING</h2>
+  <p><strong>AUTOBOXING:</strong> Autoboxing in Java is the automatic conversion of a primitive data type (e.g., int, double) into its corresponding wrapper class object (e.g., Integer, Double) by the Java compiler.</p>
+  <p><strong>UNBOXING:</strong> Unboxing in Java is the automatic conversion of a wrapper class object (e.g., Integer, Double) into its corresponding primitive data type (e.g., int, double) by the Java compiler.</p>
+  <h3>Example: Display the 3 days of movie collection using Autoboxing</h3>
+  <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+public class Main {
+    public static void main(String[] args) {
+        // Autoboxing: Converting primitive int to Integer
+        Integer day1Collection = 100; // Day-1 collection in crores
+        Integer day2Collection = 120; // Day-2 collection in crores
+        Integer day3Collection = 150; // Day-3 collection in crores
+
+        // Unboxing: Converting Integer to primitive int
+        int totalCollection = day1Collection + day2Collection + day3Collection;
+
+        // Display the collections
+        System.out.println("Day-1 Collection: " + day1Collection + " Crores");
+        System.out.println("Day-2 Collection: " + day2Collection + " Crores");
+        System.out.println("Day-3 Collection: " + day3Collection + " Crores");
+        System.out.println("Total Collection: " + totalCollection + " Crores");
+    }
+}
+  </pre>
+</section>
+
+<!-- Live Classes Section -->
+<section id="live-classes-content" style="display:none; padding: 20px; background: #fff;">
+  <h2>AUTOBOXING METHODS</h2>
+  <p><strong>Here are the key methods related to autoboxing in Java:</strong></p>
+  <h3>1. Autoboxing (Primitive to Wrapper):</h3><p>This is the automatic conversion of a primitive data type to its corresponding wrapper class. For example:</p>
+  <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+int a = 10;
+Integer obj = a;  // Autoboxing: int to Integer
+  </pre>
+  <h3>2.Unboxing (Wrapper to Primitive):</h3><p>This is the automatic conversion of a wrapper class object back to its corresponding primitive type. For example:</p>
+  <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+Integer obj = 10;
+int a = obj;  // Unboxing: Integer to int
+  </pre>
+  
+  <h3>3.Wrapper Class Methods</h3>
+  <ul>
+    <li>valueOf():</li><p>Converts a string or primitive value to the corresponding wrapper class object.</p>
+      <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+        Integer obj = Integer.valueOf(10); // converts int to Integer
+      </pre>
+    
+    <li>parseInt():</li><p>Converts a string to a primitive int.</p>
+      <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+        int num = Integer.parseInt("123");  // converts string to int
+      </pre>
+    
+    <li>intValue():</li><p>Converts an Integer object to a primitive int.</p>
+      <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+        int num = obj.intValue();  // Integer to int
+      </pre>
+  </ul>
+</section>
+
+<!-- Autoboxing Expression Section -->
+<section id="autoboxing-expression" style="display:none; padding: 20px; background: #fff;">
+  <h2>AUTOBOXING/UNBOXING boolean and chatacter value</h2>
+  <p><strong>Autoboxing and unboxing in Java are mechanisms that allow automatic conversion between primitive types and their corresponding wrapper classes. This is particularly useful when working with collections like ArrayList, which can only store objects and not primitive types.</strong/></p>
+  <p><strong>Here’s how it works for boolean and char:</strong></p>
+  <h3>1.Autoboxing:</h3><p>Automatic conversion of a primitive type to its corresponding wrapper class object.</p>
+  <h3>Example for boolean:</h3>
+  <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+boolean boolValue = true;
+Boolean boolObject = boolValue; // Autoboxing
+      </pre>
+  
+   <h3>Example for char:</h3>
+  <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+boolean boolValue = true;
+Boolean boolObject = boolValue; // Autoboxing
+      </pre> <br><br>
+  
+    <h3>2.Unboxing:</h3><p>Automatic conversion of a wrapper class object back to its corresponding primitive type.</p>
+  <h3>Example for boolean:</h3>
+  <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+Boolean boolObject = Boolean.TRUE;
+boolean boolValue = boolObject; // Unboxing
+      </pre>
+  <h3>Example for character:</h3>
+  <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+Character charObject = 'B';
+char charValue = charObject; // Unboxing
+      </pre><br><br>
+  <h3>Practical example Combining both</h3>
+  <pre style="background: #f3f4f6; padding: 10px; border-radius: 5px; overflow: auto;">
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        // Autoboxing
+        ArrayList<Character> charList = new ArrayList<>();
+        charList.add('X'); // Autoboxing: 'X' -> Character
+
+        // Unboxing
+        char ch = charList.get(0); // Unboxing: Character -> 'X'
+
+        System.out.println("Character in List: " + ch);
+
+        // Autoboxing with boolean
+        ArrayList<Boolean> boolList = new ArrayList<>();
+        boolList.add(true); // Autoboxing: true -> Boolean
+
+        // Unboxing
+        boolean bool = boolList.get(0); // Unboxing: Boolean -> true
+
+        System.out.println("Boolean in List: " + bool);
+    }
+}
+      </pre>
+</section>
+
+<footer>
+  <p>&copy; 2024 GECHOOVINAHADAGALI. All rights reserved.</p>
+</footer>
+
+<script>
+  function showJavaContent() {
+    hideAllSections();
+    document.getElementById('java-content').style.display = 'block';
+    scrollToBottom();
+  }
+
+  function showLiveClassesContent() {
+    hideAllSections();
+    document.getElementById('live-classes-content').style.display = 'block';
+    scrollToBottom();
+  }
+
+  function showAdaptiveLearning() {
+    hideAllSections();
+    document.getElementById('autoboxing-expression').style.display = 'block';
+    scrollToBottom();
+  }
+
+  function hideAllSections() {
+    document.getElementById('java-content').style.display = 'none';
+    document.getElementById('live-classes-content').style.display = 'none';
+    document.getElementById('autoboxing-expression').style.display = 'none';
+  }
+
+  function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+    
+    
+// Function to check if the element is in the viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top >= 0 && rect.bottom <= window.innerHeight;
+}
+
+// Function to add the 'visible' class when the element comes into the viewpor
+    // Function to check if element is in the viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top >= 0 && rect.bottom <= window.innerHeight;
+}
+
+// Function to add class when element is in viewport
+function checkScroll() {
+  const featureCards = document.querySelectorAll('.feature-card');
+  
+  featureCards.forEach(card => {
+    if (isInViewport(card)) {
+      card.classList.add('visible');
+    }
+  });
+}
+
+// Check on scroll event
+window.addEventListener('scroll', checkScroll);
+
+// Initial check for elements already in viewport
+checkScroll();
+    </script>
+</body>
+</html>
